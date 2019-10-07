@@ -1,35 +1,29 @@
 import React from 'react'
 import { BrowserRouter, Link as RouterLink } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import styled from "styled-components"
+
 import {
-	asAnchor,
-	asPaginationItem,
-	BackLink,
-	Breadcrumb,
 	Button,
-	Checkbox,
-	DateInput,
-	FileUpload,
 	GridCol,
 	GridRow,
 	Heading,
-	InputField,
-	Layout,
 	ListItem,
-	ListNavigation,
-	MultiChoice,
-	Pagination,
 	Page,
-	PhaseBanner,
-	Radio,
-	SearchBox,
-	Select,
-	TextArea,
-	UnorderedList,
-	Link,
+	Paragraph,
+	Link
 } from 'govuk-react';
+import { ButtonArrow } from '@govuk-react/icons';
 import ViabilityHeader from './ViabilityHeader'
 
+const ReactRouterLinkRenderer = ({ href, children }) => (
+  href.match(/^\//)
+    ? <Link to={href}>{children}</Link>
+    : <a href={href}>{children}</a>
+);
+
+const StartButton = styled.div`
+	max-width: 200px;
+`
 
 class Home extends React.Component {
 	render () {
@@ -40,7 +34,31 @@ class Home extends React.Component {
 						<GridRow>
 							<GridCol>
 								<Heading size="LARGE">Viability Assessment Checker</Heading>
-								<Link as={RouterLink} to="about">About</Link>
+
+								<Paragraph>Use this tool to:</Paragraph>
+								<ul>
+									<ListItem>check and recieve guidence from Southwark Council on your viability assesment compared to expected figures.</ListItem>
+									<ListItem>understand how your sales values compare to similar sites.</ListItem>
+									<ListItem>save copies of this check as a reference.</ListItem>
+									<ListItem>submit this check as part of your planning application.</ListItem>
+								</ul>
+
+								<Paragraph>What you will need:</Paragraph>
+								<ul>
+									<ListItem>key figures from your viability assessment.</ListItem>
+									<ListItem>planning application reference number if you are submitting as part of your planning application.</ListItem>
+								</ul>
+
+								<StartButton><Button start as={RouterLink} to="start" icon={<ButtonArrow />}>Start now</Button></StartButton>
+
+								<Heading as="h3" size="MEDIUM">Data we use</Heading>
+								<Paragraph>Your assessment figures will be checked against:</Paragraph>
+								<ul>
+									<ListItem>past viability assessments</ListItem>
+									<ListItem>current market data</ListItem>
+									<ListItem>land registry</ListItem>
+								</ul>
+								<Paragraph linkRenderer={ReactRouterLinkRenderer}>[Read more about this tool](about)</Paragraph>
 							</GridCol>
 						</GridRow>
 					</Page>

@@ -9,8 +9,9 @@ import {
 	Link
 } from 'govuk-react';
 import ViabilityHeader from './ViabilityHeader'
+import Question5 from './Question5'
 
-class About extends React.Component {
+class Start extends React.Component {
 	render () {
 		return (
 				<div>
@@ -20,7 +21,7 @@ class About extends React.Component {
 					}>
 						<GridRow>
 							<GridCol>
-								<Heading size="LARGE">About</Heading>
+								<Question5 />
 							</GridCol>
 						</GridRow>
 					</Page>
@@ -29,4 +30,4 @@ class About extends React.Component {
 	}
 }
 
-export default About
+export default Start
