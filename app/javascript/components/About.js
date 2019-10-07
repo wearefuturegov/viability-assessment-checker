@@ -4,28 +4,30 @@ import {
 	GridRow,
 	GridCol,
 	Page,
-	PhaseBanner,
 	Breadcrumbs,
 	Heading,
 	Link
 } from 'govuk-react';
-
+import ViabilityHeader from './ViabilityHeader'
 
 class About extends React.Component {
 	render () {
 		return (
-				<Page beforeChildren={
-					<Breadcrumbs>
-						<Link as={RouterLink} to="/">Home</Link>
-					  About
-					</Breadcrumbs>
-				}>
-					<GridRow>
-						<GridCol>
-							<Heading size="LARGE">About</Heading>
-						</GridCol>
-					</GridRow>
-				</Page>
+				<div>
+					<ViabilityHeader />
+					<Page header={false} beforeChildren={
+						<Breadcrumbs>
+							<Link as={RouterLink} to="/">Home</Link>
+						  About
+						</Breadcrumbs>
+					}>
+						<GridRow>
+							<GridCol>
+								<Heading size="LARGE">About</Heading>
+							</GridCol>
+						</GridRow>
+					</Page>
+				</div>
 			)
 	}
 }

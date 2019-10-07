@@ -28,18 +28,23 @@ import {
 	UnorderedList,
 	Link,
 } from 'govuk-react';
+import ViabilityHeader from './ViabilityHeader'
+
 
 class Home extends React.Component {
 	render () {
 		return (
-				<Page>
-					<GridRow>
-						<GridCol>
-							<Heading size="LARGE">Viability Assessment Checker</Heading>
-							<Link as={RouterLink} to="about">About</Link>
-						</GridCol>
-					</GridRow>
-				</Page>
+				<div>
+					<ViabilityHeader />
+					<Page header={false}>
+						<GridRow>
+							<GridCol>
+								<Heading size="LARGE">Viability Assessment Checker</Heading>
+								<Link as={RouterLink} to="about">About</Link>
+							</GridCol>
+						</GridRow>
+					</Page>
+				</div>
 			)
 	}
 }
