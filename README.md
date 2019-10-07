@@ -1,24 +1,38 @@
-# README
+# Planning Viability Checker
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+About the app...
 
-Things you may want to cover:
+# Development
 
-* Ruby version
+## Prerequisites
 
-* System dependencies
+* PostgreSQL
+* Ruby 2.4.1+
 
-* Configuration
+## Setup
 
-* Database creation
+### Install dependencies
 
-* Database initialization
+```
+bundle install
+```
 
-* How to run the test suite
+### Setup database
 
-* Services (job queues, cache servers, search engines, etc.)
+```
+rake db:setup
+```
 
-* Deployment instructions
+### Run server
 
-* ...
+```
+rails s
+```
+
+seperately run this in another tab for realtime reloading:
+
+```
+./bin/webpack-dev-server
+```
+
+The server is now running at http://localhost:3000
