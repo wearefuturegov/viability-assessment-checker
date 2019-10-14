@@ -2,6 +2,7 @@ import React from 'react'
 import {
   Heading,
   Input,
+  LabelText,
   Label
 } from 'govuk-react';
 
@@ -10,7 +11,7 @@ const Question5 = () => {
     <div>
       <Heading as="h2" size="MEDIUM">Step 5: Profit</Heading>
       <Label>
-        % of Developer profit on Gross Development Value (GDV)
+        <LabelText>% of Developer profit on Gross Development Value (GDV)</LabelText>
         <Input />
       </Label>
     </div>

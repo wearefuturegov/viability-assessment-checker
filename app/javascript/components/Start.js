@@ -6,7 +6,8 @@ import {
 	Page,
 	BackLink,
 	Heading,
-	Link
+	Link,
+	PhaseBanner
 } from 'govuk-react';
 import ViabilityHeader from './ViabilityHeader'
 import Question5 from './Question5'
@@ -17,7 +18,13 @@ class Start extends React.Component {
 				<div>
 					<ViabilityHeader />
 					<Page header={false} beforeChildren={
-						<Link as={RouterLink} to="/"><BackLink>Home</BackLink></Link>
+						<div>
+							<PhaseBanner level="alpha">
+				         This part of Southwark Council &#8211;{' '}
+				         <a href="https://google.com" target="_blank">find out what that means</a>
+				      </PhaseBanner>
+							<Link as={RouterLink} to="/"><BackLink>Home</BackLink></Link>
+						</div>
 					}>
 						<GridRow>
 							<GridCol>

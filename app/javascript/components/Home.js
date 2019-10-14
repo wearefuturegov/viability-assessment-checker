@@ -10,7 +10,8 @@ import {
 	ListItem,
 	Page,
 	Paragraph,
-	Link
+	Link,
+	PhaseBanner
 } from 'govuk-react';
 import { ButtonArrow } from '@govuk-react/icons';
 import ViabilityHeader from './ViabilityHeader'
@@ -30,7 +31,13 @@ class Home extends React.Component {
 		return (
 				<div>
 					<ViabilityHeader />
-					<Page header={false}>
+
+					<Page header={false} beforeChildren={
+							<PhaseBanner level="alpha">
+				         This part of Southwark Council &#8211;{' '}
+				         <a href="https://google.com" target="_blank">find out what that means</a>
+				      </PhaseBanner>
+				    }>
 						<GridRow>
 							<GridCol>
 								<Heading size="LARGE">Viability Assessment Checker</Heading>
@@ -49,7 +56,9 @@ class Home extends React.Component {
 									<ListItem>planning application reference number if you are submitting as part of your planning application.</ListItem>
 								</ul>
 
+								<br/>
 								<StartButton><Button start as={RouterLink} to="start" icon={<ButtonArrow />}>Start now</Button></StartButton>
+								<br/>
 
 								<Heading as="h3" size="MEDIUM">Data we use</Heading>
 								<Paragraph>Your assessment figures will be checked against:</Paragraph>

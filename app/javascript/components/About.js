@@ -16,7 +16,13 @@ class About extends React.Component {
 				<div>
 					<ViabilityHeader />
 					<Page header={false} beforeChildren={
-						<Link as={RouterLink} to="/"><BackLink>Home</BackLink></Link>
+						<div>
+							<PhaseBanner level="alpha">
+				         This part of Southwark Council &#8211;{' '}
+				         <a href="https://google.com" target="_blank">find out what that means</a>
+				      </PhaseBanner>
+							<Link as={RouterLink} to="/"><BackLink>Home</BackLink></Link>
+						</div>
 					}>
 						<GridRow>
 							<GridCol>
